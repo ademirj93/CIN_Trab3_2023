@@ -175,6 +175,24 @@ def aco(cidades, num_formigas, num_iteracoes, alpha, beta, evaporacao, Q, num_fo
 #Função de plotagem dos gráficos
 def plotar_grafico(cidades, melhor_solucao,lista_iteracoes, lista_melhor_distancia, num_formigas, formigas):
     
+    # Extrair as coordenadas X e Y das cidades
+    x = [cidade[0] for cidade in cidades]
+    y = [cidade[1] for cidade in cidades]
+
+    # Plota os pontos das cidades
+    plt.scatter(x, y, color='red', label='Cidades Berlin52')
+    plt.xlabel('Coordenada X')
+    plt.ylabel('Coordenada Y')
+    plt.title('Cidades')
+
+    # Adiciona os nomes das cidades como anotações
+    for i, cidade in enumerate(cidades):
+        plt.annotate(f'{i}', (cidade[0], cidade[1]), textcoords="offset points", xytext=(0,5), ha='center')
+
+    # Mostra o gráfico
+    plt.show()
+
+
     plt.plot(lista_iteracoes, lista_melhor_distancia)
     plt.xlabel('Iteração')
     plt.ylabel('Melhor Distância')
@@ -205,20 +223,7 @@ def plotar_grafico(cidades, melhor_solucao,lista_iteracoes, lista_melhor_distanc
     plt.legend()
     plt.show()
     
-    # Extrair as coordenadas X e Y das cidades
-    x = [cidade[0] for cidade in cidades]
-    y = [cidade[1] for cidade in cidades]
-
     
-    # Plota os pontos das cidades
-    plt.scatter(x, y, color='red')
-    plt.xlabel('Coordenada X')
-    plt.ylabel('Coordenada Y')
-    plt.title('Cidades')
-
-    # Mostra o gráfico
-    plt.show()
-
     # Plotar as cidades no gráfico
     plt.scatter(x, y, color='red', label='Cidades')
 
