@@ -209,6 +209,16 @@ def plotar_grafico(cidades, melhor_solucao,lista_iteracoes, lista_melhor_distanc
     x = [cidade[0] for cidade in cidades]
     y = [cidade[1] for cidade in cidades]
 
+    
+    # Plota os pontos das cidades
+    plt.scatter(x, y, color='red')
+    plt.xlabel('Coordenada X')
+    plt.ylabel('Coordenada Y')
+    plt.title('Cidades')
+
+    # Mostra o gráfico
+    plt.show()
+
     # Plotar as cidades no gráfico
     plt.scatter(x, y, color='red', label='Cidades')
 
